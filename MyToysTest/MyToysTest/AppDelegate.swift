@@ -18,17 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         
-        /*let controllerWebView = MTGWebViewController(nibNameXib: "WebController");
-        
-        
-        let nav = UINavigationController();
-        nav.addChildViewController(controllerWebView);
-        
-        self.window?.rootViewController = nav;
-        self.window?.makeKeyAndVisible()
-        return true
-        
-        */
         
         return true
     }

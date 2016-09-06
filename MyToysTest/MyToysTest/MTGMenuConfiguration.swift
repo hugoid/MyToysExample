@@ -14,8 +14,6 @@ import Foundation
 public class MTGMenuConfiguration {
     
     //if receive more values in the json we can create in this class
-    
-    
     public var listMenuItems :  [[MTGMenuItem]]
     
     

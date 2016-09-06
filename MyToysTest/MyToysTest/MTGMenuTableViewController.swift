@@ -84,8 +84,7 @@ class MTGMenuTableViewController: UIViewController ,UITableViewDelegate,UITableV
             else{
                 return "";
             }
-            
-            return menuItem.text;
+        
         }
         else{
             return "";
@@ -179,13 +178,4 @@ class MTGMenuTableViewController: UIViewController ,UITableViewDelegate,UITableV
         }
     }
     
-
-    
-    //MARK: Action Button
-    
-    @IBAction func pushBack(sender: AnyObject) {
-    }
-    
-    @IBAction func pushCloseController(sender: AnyObject) {
-    }
 }

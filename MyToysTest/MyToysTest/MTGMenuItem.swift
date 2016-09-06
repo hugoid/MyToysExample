@@ -17,14 +17,8 @@ public class MTGMenuItem {
      Text label
      */
     public var text : String?
-    /**
-     Tipo de elemento
-     */
     public var elementType : String?
     public var url: String?
-    /**
-     Elementos
-     */
     public var elements : [MTGMenuItem]
     
     public var stringIdentifier : String?

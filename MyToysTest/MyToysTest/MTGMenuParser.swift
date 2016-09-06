@@ -14,15 +14,6 @@ public class MTGMenuParser:MTGParser  {
    
     
     public init() { }
-    
-  
-    
-    /**
-     Parseador del json
-     - parameter data: diccionario con los datos a parsear
-     - parameter completion: bloque de que el parseo se ha realizado correctamente
-     - parameter failed: bloque de error
-     */
     public func parseJson(data: NSDictionary, completion: (result: AnyObject?) -> Void, failed: (error: NSError) -> Void) {
         
         let configurationItem : MTGMenuConfiguration = MTGMenuConfiguration()
@@ -106,9 +97,9 @@ public class MTGMenuParser:MTGParser  {
     
     
     /**
-     Parseamos los elementos del menú
-     - parameter elements: array con los elementos del menú
-     - returns: array con los elementos del menu parseados
+     parser menu elements
+     - parameter elements: array menu elements
+     - returns: array with menuitem as a model
      */
     public func parserElements ( elements : NSArray, idsParents: [String]? ) -> [MTGMenuItem] {
         
@@ -118,7 +109,7 @@ public class MTGMenuParser:MTGParser  {
             
             if let elementDict : NSDictionary = element as? NSDictionary {
                 
-                //Parseamos un elemento
+                //Parser a element
                 let item : MTGMenuItem = self.parseMenuItem(elementDict, idsParents: idsParents)
                 
                 list.append(item)
