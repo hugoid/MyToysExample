@@ -40,7 +40,7 @@ class MTGWebViewController: UIViewController, UIWebViewDelegate {
         self.activityIndicator.startAnimating();
         let url = NSURL (string: url);
         let requestObj = NSURLRequest(URL: url!);
-        self.webView.loadRequest(requestObj);
+        //self.webView.loadRequest(requestObj);
     }
     
     func loadMenu () -> Void {
@@ -49,7 +49,6 @@ class MTGWebViewController: UIViewController, UIWebViewDelegate {
         testMenuHelper.getMenu({ (menuConfiguration) in
             //
             if let menuConfigurationUnwrapped : MTGMenuConfiguration = menuConfiguration {
-                print("Menuconfiguration \(menuConfigurationUnwrapped)");
                 self.menuConfiguration = menuConfigurationUnwrapped;
             }
             
@@ -65,10 +64,8 @@ class MTGWebViewController: UIViewController, UIWebViewDelegate {
         if segue.identifier == "segueMenu" {
             
             if let menuTableViewControllerUnwrapped = segue.destinationViewController as? MTGMenuTableViewController {
-                //self.setOverrideTraitCollection(UITraitCollection(horizontalSizeClass: .Regular), forChildViewController: menuTableViewControllerUnwrapped);
-                
                 if let menuConfigurationUnwrapped:MTGMenuConfiguration = self.menuConfiguration {
-                    menuTableViewControllerUnwrapped.setupController(menuConfigurationUnwrapped);
+                    menuTableViewControllerUnwrapped.setupController(menuConfigurationUnwrapped, title: "Menu", backButton: false, controllerWeb: self);
                 }
                 
             }
