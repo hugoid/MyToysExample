@@ -8,32 +8,23 @@
 
 import UIKit
 
-class MTGWebViewController: UIViewController {
+class MTGWebViewController: UIViewController, UIWebViewDelegate {
     
     let firstLoad:String = "https://www.mytoys.de";
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var webView: UIWebView!
     var menuConfiguration:MTGMenuConfiguration?;
-    
-    /*init() {
-        super.init(nibName:"WebController", bundle:nil);
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    init (nibNameXib: String) {
-        super.init(nibName:nibNameXib, bundle:nil);
-    }*/
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "ToysGroup";
-        
+        self.webView.delegate = self;
         self.loadMenu();
         self.loadHTML(firstLoad);
+        self.navigationController!.navigationBar.barTintColor = UIColor.init(colorLiteralRed: 255/255, green: 216/255, blue: 0, alpha: 1);
+        self.navigationController!.navigationBar.tintColor = UIColor.blackColor();
     }
     
      override func viewWillAppear(animated: Bool) {
@@ -46,6 +37,7 @@ class MTGWebViewController: UIViewController {
     
     //MARK: Load Web & Menu
     func loadHTML(url:String) -> Void{
+        self.activityIndicator.startAnimating();
         let url = NSURL (string: url);
         let requestObj = NSURLRequest(URL: url!);
         self.webView.loadRequest(requestObj);
@@ -91,8 +83,15 @@ class MTGWebViewController: UIViewController {
         if let menuConfigurationUnwrapped:MTGMenuConfiguration = self.menuConfiguration {
             menu.setupController(menuConfigurationUnwrapped, title: "Menu", backButton: false,controllerWeb: self);
             self.navigationController?.pushViewController(menu, animated: true);
+            
+            
         }
         
+    }
+    
+    //MARK: WebView Delegate
+    func webViewDidFinishLoad(webView: UIWebView) {
+        self.activityIndicator.stopAnimating();
     }
     
 }

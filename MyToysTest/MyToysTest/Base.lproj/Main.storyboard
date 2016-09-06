@@ -35,22 +35,29 @@
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WOh-iB-xPC">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </webView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="PjF-5D-fKR">
+                                <rect key="frame" x="282" y="282" width="37" height="37"/>
+                                <color key="color" red="1" green="0.84705882352941175" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
+                        <color key="backgroundColor" red="1" green="0.84705882349999995" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="PjF-5D-fKR" firstAttribute="centerY" secondItem="dvK-2P-JHr" secondAttribute="centerY" id="0ik-rB-lJv"/>
                             <constraint firstItem="WOh-iB-xPC" firstAttribute="top" secondItem="x0r-DO-Ko5" secondAttribute="bottom" id="5pV-gn-MC9"/>
                             <constraint firstItem="WOh-iB-xPC" firstAttribute="leading" secondItem="dvK-2P-JHr" secondAttribute="leading" id="6cc-Ks-SPb"/>
+                            <constraint firstItem="PjF-5D-fKR" firstAttribute="centerX" secondItem="dvK-2P-JHr" secondAttribute="centerX" id="H7B-vq-Heo"/>
                             <constraint firstAttribute="trailing" secondItem="WOh-iB-xPC" secondAttribute="trailing" id="ikL-p7-WvT"/>
                             <constraint firstItem="7I4-qN-M2y" firstAttribute="top" secondItem="WOh-iB-xPC" secondAttribute="bottom" id="w7C-hh-Njb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5MP-uN-VkM">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="SOJ-ag-fNu">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NGP-oB-Arn">
-                                <rect key="frame" x="20" y="7" width="46" height="30"/>
+                            <button key="customView" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="NGP-oB-Arn">
+                                <rect key="frame" x="20" y="10" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" image="iconMenu"/>
                                 <connections>
                                     <action selector="pushMenu:" destination="ZCR-Gb-Zkd" eventType="touchUpInside" id="uPv-2E-w2P"/>
                                 </connections>
@@ -58,6 +65,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="PjF-5D-fKR" id="g8v-Tn-iJJ"/>
                         <outlet property="webView" destination="WOh-iB-xPC" id="KUB-Jv-lSB"/>
                     </connections>
                 </viewController>
@@ -179,4 +187,7 @@
             <point key="canvasLocation" x="1661" y="250"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="iconMenu" width="24" height="24"/>
+    </resources>
 </document>

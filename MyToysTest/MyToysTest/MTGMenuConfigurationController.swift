@@ -19,15 +19,20 @@ class MTGMenuConfigurationController: UIViewController  ,UITableViewDelegate,UIT
     var controllerWeb:MTGWebViewController?;
     
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.navigationController!.navigationBar.barTintColor = UIColor.init(colorLiteralRed: 255/255, green: 216/255, blue: 0, alpha: 1);
+        self.navigationController!.navigationBar.tintColor = UIColor.blackColor();
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true);
         
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell");
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
-        
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(closeController))
-        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.init(named: "iconClose"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(closeController));
         
     }
     func closeController () -> Void {
