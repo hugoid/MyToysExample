@@ -23,16 +23,15 @@ class MTGMenuTableViewController: UIViewController ,UITableViewDelegate,UITableV
         super.viewDidLoad()
         self.navigationController!.navigationBar.barTintColor = UIColor.init(colorLiteralRed: 255/255, green: 216/255, blue: 0, alpha: 1);
         self.navigationController!.navigationBar.tintColor = UIColor.blackColor();
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.init(named: "iconClose"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(closeController));
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true);
-        
-        //self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell");
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
         self.tableView.reloadData();
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.init(named: "iconClose"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(closeController));
+        
         
     }
     func closeController () -> Void {

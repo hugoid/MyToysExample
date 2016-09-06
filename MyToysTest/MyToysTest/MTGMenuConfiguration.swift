@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 //data source to tableView
 
 public class MTGMenuConfiguration {

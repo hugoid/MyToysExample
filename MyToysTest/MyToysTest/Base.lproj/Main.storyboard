@@ -24,7 +24,7 @@
         <!--Web View Controller-->
         <scene sceneID="iqv-cH-Jrp">
             <objects>
-                <viewController id="ZCR-Gb-Zkd" customClass="MTGWebViewController" customModule="MyToysTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="ZCR-Gb-Zkd" customClass="MTGWebViewController" customModule="MyToysTest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="x0r-DO-Ko5"/>
                         <viewControllerLayoutGuide type="bottom" id="7I4-qN-M2y"/>
@@ -66,6 +66,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="PjF-5D-fKR" id="g8v-Tn-iJJ"/>
+                        <outlet property="menuButton" destination="NGP-oB-Arn" id="UjY-fA-hni"/>
                         <outlet property="webView" destination="WOh-iB-xPC" id="KUB-Jv-lSB"/>
                     </connections>
                 </viewController>
@@ -76,7 +77,7 @@
         <!--Menu Table View Controller-->
         <scene sceneID="J3d-M6-Av0">
             <objects>
-                <viewController storyboardIdentifier="menuViewControllerID" id="AMW-lU-wHp" customClass="MTGMenuTableViewController" customModule="MyToysTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="menuViewControllerID" automaticallyAdjustsScrollViewInsets="NO" id="AMW-lU-wHp" customClass="MTGMenuTableViewController" customModule="MyToysTest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="E8f-DZ-cy1"/>
                         <viewControllerLayoutGuide type="bottom" id="EQd-3j-vP2"/>
@@ -90,7 +91,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="7UU-i2-WY7" style="IBUITableViewCellStyleDefault" id="Dr9-YA-CDd">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dr9-YA-CDd" id="WeR-gg-qQN">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -100,7 +101,7 @@
                                                     <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>

@@ -10,6 +10,7 @@ import UIKit
 
 class MTGWebViewController: UIViewController, UIWebViewDelegate {
     
+    @IBOutlet weak var menuButton: UIButton!
     let firstLoad:String = "https://www.mytoys.de";
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -40,16 +41,20 @@ class MTGWebViewController: UIViewController, UIWebViewDelegate {
         self.activityIndicator.startAnimating();
         let url = NSURL (string: url);
         let requestObj = NSURLRequest(URL: url!);
-        //self.webView.loadRequest(requestObj);
+        self.webView.loadRequest(requestObj);
     }
     
     func loadMenu () -> Void {
-        
+        //show a menu when load the data
+        //to improve, we could show a button where update the menu again
+        self.menuButton.hidden = true;
         let testMenuHelper:MTGMenuHelper = MTGMenuHelper();
         testMenuHelper.getMenu({ (menuConfiguration) in
             //
             if let menuConfigurationUnwrapped : MTGMenuConfiguration = menuConfiguration {
+                self.menuButton.hidden = false;
                 self.menuConfiguration = menuConfigurationUnwrapped;
+                
             }
             
         }) { (error) in
@@ -73,18 +78,7 @@ class MTGWebViewController: UIViewController, UIWebViewDelegate {
         
     }
     
-    //MARK: Action Button
-    
-    @IBAction func pushMenu(sender: AnyObject) {
-        let menu:MTGMenuConfigurationController = MTGMenuConfigurationController();
-        if let menuConfigurationUnwrapped:MTGMenuConfiguration = self.menuConfiguration {
-            menu.setupController(menuConfigurationUnwrapped, title: "Menu", backButton: false,controllerWeb: self);
-            self.navigationController?.pushViewController(menu, animated: true);
-            
-            
-        }
-        
-    }
+  
     
     //MARK: WebView Delegate
     func webViewDidFinishLoad(webView: UIWebView) {

@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2119A2191D7F0F4800347C24 /* MyToysTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2119A2181D7F0F4800347C24 /* MyToysTestTests.swift */; };
+		2119A2221D7F119D00347C24 /* testData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2119A2211D7F119D00347C24 /* testData.json */; };
+		2119A2231D7F119D00347C24 /* testData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2119A2211D7F119D00347C24 /* testData.json */; };
+		2119A2271D7F18DA00347C24 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2119A2261D7F18DA00347C24 /* Network.swift */; };
+		2119A2281D7F18DA00347C24 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2119A2261D7F18DA00347C24 /* Network.swift */; };
 		2169BDFF1D7DB7D900219115 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169BDFE1D7DB7D900219115 /* AppDelegate.swift */; };
-		2169BE011D7DB7D900219115 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169BE001D7DB7D900219115 /* ViewController.swift */; };
 		2169BE041D7DB7D900219115 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2169BE021D7DB7D900219115 /* Main.storyboard */; };
 		2169BE061D7DB7D900219115 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2169BE051D7DB7D900219115 /* Assets.xcassets */; };
 		2169BE091D7DB7D900219115 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2169BE071D7DB7D900219115 /* LaunchScreen.storyboard */; };
@@ -21,17 +25,27 @@
 		2169BE261D7DCAA900219115 /* MTGParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169BE251D7DCAA900219115 /* MTGParser.swift */; };
 		2169BE281D7DD6AD00219115 /* MTGWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169BE271D7DD6AD00219115 /* MTGWebViewController.swift */; };
 		2169BE2B1D7DD7B000219115 /* MTGMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169BE2A1D7DD7B000219115 /* MTGMenuTableViewController.swift */; };
-		2169BE331D7DFD9C00219115 /* MTGMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169BE311D7DFD9C00219115 /* MTGMenuController.swift */; };
-		2169BE341D7DFD9C00219115 /* MTGMenuController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2169BE321D7DFD9C00219115 /* MTGMenuController.xib */; };
-		2169BE371D7E028500219115 /* MTGMenuConfigurationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169BE351D7E028500219115 /* MTGMenuConfigurationController.swift */; };
-		2169BE381D7E028500219115 /* MTGMenuConfigurationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2169BE361D7E028500219115 /* MTGMenuConfigurationController.xib */; };
 		216A35E86DC9BC0BCC1F74FA /* Pods_MyToysTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98DC23FA38287C6C99978F93 /* Pods_MyToysTest.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2119A21B1D7F0F4800347C24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2169BDF31D7DB7D900219115 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2169BDFA1D7DB7D900219115;
+			remoteInfo = MyToysTest;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		2119A2161D7F0F4800347C24 /* MyToysTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyToysTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2119A2181D7F0F4800347C24 /* MyToysTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyToysTestTests.swift; sourceTree = "<group>"; };
+		2119A21A1D7F0F4800347C24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2119A2211D7F119D00347C24 /* testData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testData.json; sourceTree = "<group>"; };
+		2119A2261D7F18DA00347C24 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		2169BDFB1D7DB7D900219115 /* MyToysTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyToysTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2169BDFE1D7DB7D900219115 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2169BE001D7DB7D900219115 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2169BE031D7DB7D900219115 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2169BE051D7DB7D900219115 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2169BE081D7DB7D900219115 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -45,16 +59,19 @@
 		2169BE251D7DCAA900219115 /* MTGParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTGParser.swift; sourceTree = "<group>"; };
 		2169BE271D7DD6AD00219115 /* MTGWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTGWebViewController.swift; sourceTree = "<group>"; };
 		2169BE2A1D7DD7B000219115 /* MTGMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTGMenuTableViewController.swift; sourceTree = "<group>"; };
-		2169BE311D7DFD9C00219115 /* MTGMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTGMenuController.swift; sourceTree = "<group>"; };
-		2169BE321D7DFD9C00219115 /* MTGMenuController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTGMenuController.xib; sourceTree = "<group>"; };
-		2169BE351D7E028500219115 /* MTGMenuConfigurationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTGMenuConfigurationController.swift; sourceTree = "<group>"; };
-		2169BE361D7E028500219115 /* MTGMenuConfigurationController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTGMenuConfigurationController.xib; sourceTree = "<group>"; };
 		98DC23FA38287C6C99978F93 /* Pods_MyToysTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyToysTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB8D4E12E8FAA5818881417 /* Pods-MyToysTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyToysTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyToysTest/Pods-MyToysTest.release.xcconfig"; sourceTree = "<group>"; };
 		F682CBBDC395D6554EDDA201 /* Pods-MyToysTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyToysTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyToysTest/Pods-MyToysTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2119A2131D7F0F4800347C24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2169BDF81D7DB7D900219115 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -66,10 +83,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2119A2171D7F0F4800347C24 /* MyToysTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				2119A2261D7F18DA00347C24 /* Network.swift */,
+				2119A2181D7F0F4800347C24 /* MyToysTestTests.swift */,
+				2119A21A1D7F0F4800347C24 /* Info.plist */,
+			);
+			path = MyToysTestTests;
+			sourceTree = "<group>";
+		};
+		2119A2201D7F118F00347C24 /* DataJson */ = {
+			isa = PBXGroup;
+			children = (
+				2119A2211D7F119D00347C24 /* testData.json */,
+			);
+			name = DataJson;
+			sourceTree = "<group>";
+		};
 		2169BDF21D7DB7D900219115 = {
 			isa = PBXGroup;
 			children = (
 				2169BDFD1D7DB7D900219115 /* MyToysTest */,
+				2119A2171D7F0F4800347C24 /* MyToysTestTests */,
 				2169BDFC1D7DB7D900219115 /* Products */,
 				91D9C746CE96CCCAEF5A7855 /* Pods */,
 				B621A2CEF7D0787D0B6F96B6 /* Frameworks */,
@@ -80,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				2169BDFB1D7DB7D900219115 /* MyToysTest.app */,
+				2119A2161D7F0F4800347C24 /* MyToysTestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,12 +124,11 @@
 		2169BDFD1D7DB7D900219115 /* MyToysTest */ = {
 			isa = PBXGroup;
 			children = (
-				2169BE2C1D7DF95900219115 /* xib */,
+				2119A2201D7F118F00347C24 /* DataJson */,
 				2169BE161D7DBD2000219115 /* Utils */,
 				2169BE131D7DBC0D00219115 /* Connection */,
 				2169BE101D7DB86C00219115 /* ViewControllers */,
 				2169BDFE1D7DB7D900219115 /* AppDelegate.swift */,
-				2169BE001D7DB7D900219115 /* ViewController.swift */,
 				2169BE021D7DB7D900219115 /* Main.storyboard */,
 				2169BE051D7DB7D900219115 /* Assets.xcassets */,
 				2169BE071D7DB7D900219115 /* LaunchScreen.storyboard */,
@@ -113,10 +149,10 @@
 		2169BE111D7DB87400219115 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				2169BE1B1D7DC4F200219115 /* Controllers */,
 				2169BE201D7DC5FD00219115 /* Helpers */,
 				2169BE1A1D7DC4EA00219115 /* Models */,
 				2169BE191D7DC4E400219115 /* Parser */,
-				2169BE1B1D7DC4F200219115 /* Controllers */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -187,17 +223,6 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
-		2169BE2C1D7DF95900219115 /* xib */ = {
-			isa = PBXGroup;
-			children = (
-				2169BE311D7DFD9C00219115 /* MTGMenuController.swift */,
-				2169BE321D7DFD9C00219115 /* MTGMenuController.xib */,
-				2169BE351D7E028500219115 /* MTGMenuConfigurationController.swift */,
-				2169BE361D7E028500219115 /* MTGMenuConfigurationController.xib */,
-			);
-			name = xib;
-			sourceTree = "<group>";
-		};
 		91D9C746CE96CCCAEF5A7855 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +243,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2119A2151D7F0F4800347C24 /* MyToysTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2119A21D1D7F0F4800347C24 /* Build configuration list for PBXNativeTarget "MyToysTestTests" */;
+			buildPhases = (
+				2119A2121D7F0F4800347C24 /* Sources */,
+				2119A2131D7F0F4800347C24 /* Frameworks */,
+				2119A2141D7F0F4800347C24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2119A21C1D7F0F4800347C24 /* PBXTargetDependency */,
+			);
+			name = MyToysTestTests;
+			productName = MyToysTestTests;
+			productReference = 2119A2161D7F0F4800347C24 /* MyToysTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		2169BDFA1D7DB7D900219115 /* MyToysTest */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2169BE0D1D7DB7D900219115 /* Build configuration list for PBXNativeTarget "MyToysTest" */;
@@ -248,6 +291,10 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = MyToys;
 				TargetAttributes = {
+					2119A2151D7F0F4800347C24 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 2169BDFA1D7DB7D900219115;
+					};
 					2169BDFA1D7DB7D900219115 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
@@ -267,20 +314,28 @@
 			projectRoot = "";
 			targets = (
 				2169BDFA1D7DB7D900219115 /* MyToysTest */,
+				2119A2151D7F0F4800347C24 /* MyToysTestTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2119A2141D7F0F4800347C24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2119A2231D7F119D00347C24 /* testData.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2169BDF91D7DB7D900219115 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				2169BE091D7DB7D900219115 /* LaunchScreen.storyboard in Resources */,
 				2169BE061D7DB7D900219115 /* Assets.xcassets in Resources */,
-				2169BE381D7E028500219115 /* MTGMenuConfigurationController.xib in Resources */,
 				2169BE041D7DB7D900219115 /* Main.storyboard in Resources */,
-				2169BE341D7DFD9C00219115 /* MTGMenuController.xib in Resources */,
+				2119A2221D7F119D00347C24 /* testData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,20 +390,27 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2119A2121D7F0F4800347C24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2119A2281D7F18DA00347C24 /* Network.swift in Sources */,
+				2119A2191D7F0F4800347C24 /* MyToysTestTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2169BDF71D7DB7D900219115 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				2169BE241D7DC68B00219115 /* MTGMenuParser.swift in Sources */,
 				2169BE221D7DC61D00219115 /* MTGMenuHelper.swift in Sources */,
+				2119A2271D7F18DA00347C24 /* Network.swift in Sources */,
 				2169BE1F1D7DC52500219115 /* MTGMenuConfiguration.swift in Sources */,
-				2169BE331D7DFD9C00219115 /* MTGMenuController.swift in Sources */,
 				2169BE151D7DBCC100219115 /* MTGConnection.swift in Sources */,
 				2169BE281D7DD6AD00219115 /* MTGWebViewController.swift in Sources */,
-				2169BE371D7E028500219115 /* MTGMenuConfigurationController.swift in Sources */,
 				2169BE261D7DCAA900219115 /* MTGParser.swift in Sources */,
 				2169BE1D1D7DC51600219115 /* MTGMenuItem.swift in Sources */,
-				2169BE011D7DB7D900219115 /* ViewController.swift in Sources */,
 				2169BDFF1D7DB7D900219115 /* AppDelegate.swift in Sources */,
 				2169BE2B1D7DD7B000219115 /* MTGMenuTableViewController.swift in Sources */,
 				2169BE181D7DBD3900219115 /* MTGGlobalVars.swift in Sources */,
@@ -356,6 +418,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2119A21C1D7F0F4800347C24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2169BDFA1D7DB7D900219115 /* MyToysTest */;
+			targetProxy = 2119A21B1D7F0F4800347C24 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2169BE021D7DB7D900219115 /* Main.storyboard */ = {
@@ -377,6 +447,30 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2119A21E1D7F0F4800347C24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MyToysTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MyToysTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyToysTest.app/MyToysTest";
+			};
+			name = Debug;
+		};
+		2119A21F1D7F0F4800347C24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MyToysTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MyToysTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyToysTest.app/MyToysTest";
+			};
+			name = Release;
+		};
 		2169BE0B1D7DB7D900219115 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -489,6 +583,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2119A21D1D7F0F4800347C24 /* Build configuration list for PBXNativeTarget "MyToysTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2119A21E1D7F0F4800347C24 /* Debug */,
+				2119A21F1D7F0F4800347C24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		2169BDF61D7DB7D900219115 /* Build configuration list for PBXProject "MyToysTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
