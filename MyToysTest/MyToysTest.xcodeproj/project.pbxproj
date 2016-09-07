@@ -590,6 +590,7 @@
 				2119A21F1D7F0F4800347C24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2169BDF61D7DB7D900219115 /* Build configuration list for PBXProject "MyToysTest" */ = {
 			isa = XCConfigurationList;
