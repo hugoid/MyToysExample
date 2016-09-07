@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MTGMenuTableViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource{
+class MTGMenuTableViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource,UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning{
     
     @IBOutlet weak var labelBackTableView: UILabel!
     
@@ -18,12 +18,30 @@ class MTGMenuTableViewController: UIViewController ,UITableViewDelegate,UITableV
     
     var controllerWeb:MTGWebViewController?;
     
+    var backHidden:Bool = false;
+    var labelTitle:String = "";
+    var labelBackTitle:String = "";
+    
+    @IBOutlet weak var labelBackItemNavigation: UILabel!
+    @IBOutlet weak var labelTitleItemNavigation: UILabel!
+    
+    @IBOutlet weak var viewBack: UIControl!
+    var isPresenting: Bool!
+    let animationDuration = 0.3
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController!.navigationBar.barTintColor = UIColor.init(colorLiteralRed: 255/255, green: 216/255, blue: 0, alpha: 1);
-        self.navigationController!.navigationBar.tintColor = UIColor.blackColor();
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.init(named: "iconClose"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(closeController));
+        
+        if !backHidden {
+            self.viewBack.hidden = true;
+        }
+        else{
+            self.viewBack.hidden = false;
+        }
+    
+        self.labelBackItemNavigation.text = labelBackTitle;
+        self.labelTitleItemNavigation.text = labelTitle;
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -34,23 +52,29 @@ class MTGMenuTableViewController: UIViewController ,UITableViewDelegate,UITableV
         
         
     }
-    func closeController () -> Void {
-        self.navigationController?.popToRootViewControllerAnimated(true);
-    }
     
-    func setupController (menu:MTGMenuConfiguration,title:String,backButton:Bool,controllerWeb:MTGWebViewController) -> Void {
+    func setupController (menu:MTGMenuConfiguration,title:String,titleBack:String,backButton:Bool,controllerWeb:MTGWebViewController) -> Void {
         self.controllerWeb = controllerWeb;
         self.dataSourceMenu = menu;
-        self.title = title;
-        if !backButton {
-            self.navigationItem.setHidesBackButton(true, animated: true);
-        }
-        else{
-            self.navigationItem.setHidesBackButton(false, animated: true);
-        }
-
+        
+        self.labelTitle = title;
+        self.labelBackTitle = titleBack;
+        self.backHidden = backButton;
+        
+        
+        
         
     }
+    
+    
+    
+    func closeController () -> Void {
+        self.view.window?.rootViewController?.dismissViewControllerAnimated(true, completion: {
+            //
+        });
+    }
+    
+    
     
     // MARK: - Table view data source
     
@@ -163,19 +187,98 @@ class MTGMenuTableViewController: UIViewController ,UITableViewDelegate,UITableV
         }
         
         if menuItem.elementType == "node" {
-            print("node");
+            
             let menuConfiguration:MTGMenuConfiguration = MTGMenuConfiguration();
             menuConfiguration.listMenuItems = [menuItem.elements];
             let menuViewController:MTGMenuTableViewController =  (UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("menuViewControllerID") as? MTGMenuTableViewController)!;
-            menuViewController.setupController(menuConfiguration, title: menuItem.text!, backButton: true, controllerWeb: self.controllerWeb!);
-            self.navigationController?.pushViewController(menuViewController, animated: true);
+            menuViewController.setupController(menuConfiguration, title: menuItem.text!,titleBack:self.labelTitleItemNavigation.text!, backButton: true, controllerWeb: self.controllerWeb!);
+            menuViewController.transitioningDelegate = self
+            menuViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+            self.presentViewController(menuViewController, animated: true, completion: {
+                //
+            });
             
         }
         else{
-            print("link");
+           
             self.controllerWeb?.loadHTML(menuItem.url!);
-            self.navigationController?.popToRootViewControllerAnimated(true);
+            self.view.window?.rootViewController?.dismissViewControllerAnimated(true, completion: {
+                //
+            });
         }
     }
+    
+    //MARK: Action Button
+    
+    
+    @IBAction func pushCloseMenu(sender: AnyObject) {
+        self.closeController();
+    }
+    
+    @IBAction func pushBackButton(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: {
+            //
+        });
+    }
+    
+    //MARK: Animation Push View Controller
+    //It would be better create a MenuTableViewControllerPushAnimation with this method, and this class extend the class
+    // to reduce the size for this class
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        isPresenting = false;
+        return self
+    }
+    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+        return 5
+        
+    }
+    
+    
+    
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        isPresenting = true
+        return self;
+    }
+    
+    
+    
+    
+    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+        let containerView = transitionContext.containerView();
+        let fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)
+        let toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)
+        toViewController!.view.frame = fromViewController!.view.frame
+        if(self.isPresenting == true) {
+            toViewController!.view.alpha = 0;
+            //toViewController!.view.transform = CGAffineTransformMakeScale(0, 0);
+            toViewController!.view.transform = CGAffineTransformMakeTranslation(self.view.frame.size.width, self.view.frame.origin.y)
+            
+            UIView.animateWithDuration(animationDuration, animations: {
+                //
+                toViewController!.view.alpha = 1;
+                //toViewController!.view.transform = CGAffineTransformMakeScale(1, 1);
+                toViewController!.view.transform = CGAffineTransformMakeTranslation(0, self.view.frame.origin.y)
+                containerView!.addSubview(toViewController!.view)
+                }, completion: { (completed) in
+                    transitionContext.completeTransition(completed)
+            })
+            
+            
+            
+        } else {
+            
+            UIView.animateWithDuration(animationDuration, animations: {
+                //
+                
+                fromViewController!.view.alpha = 0;
+                fromViewController!.view.transform = CGAffineTransformMakeTranslation(self.view.frame.size.width, self.view.frame.origin.y)                }, completion: { (completed) in
+                    fromViewController?.view.removeFromSuperview()
+                    transitionContext.completeTransition(completed)
+            })
+            
+            
+        }
+    }
+    
     
 }

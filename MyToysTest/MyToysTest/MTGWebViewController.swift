@@ -70,7 +70,7 @@ class MTGWebViewController: UIViewController, UIWebViewDelegate {
             
             if let menuTableViewControllerUnwrapped = segue.destinationViewController as? MTGMenuTableViewController {
                 if let menuConfigurationUnwrapped:MTGMenuConfiguration = self.menuConfiguration {
-                    menuTableViewControllerUnwrapped.setupController(menuConfigurationUnwrapped, title: "Menu", backButton: false, controllerWeb: self);
+                    menuTableViewControllerUnwrapped.setupController(menuConfigurationUnwrapped, title: "Menu",titleBack:"", backButton: false, controllerWeb: self);
                 }
                 
             }
